@@ -63,7 +63,7 @@ const UserController = {
         html: `
               <h1>Добро пожаловать, ${name}!</h1>
               <p>Спасибо за регистрацию в нашем сервисе.</p>
-              <p>Ваш email: <strong>http://${process.env.BASE_URL_FRONT}/active/${activationLink}</strong></p>
+              <p>Ваш email: <strong>http://${process.env.BASE_URL}/active/${activationLink}</strong></p>
               `,
         text: `Добро пожаловать, ${name}!\n\nСпасибо за регистрацию.\n\nВаш email: ${email}`,
       };
