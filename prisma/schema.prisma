@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -72,35 +66,6 @@ model Like {
   product   Product @relation(fields: [productId], references: [id])
 }
 
-model Chat {
-  id        String     @id @default(auto()) @map("_id") @db.ObjectId
-  user      UserChat[]
-  messages  Message[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  User      User?      @relation(fields: [userId], references: [id])
-  userId    String?    @db.ObjectId
-}
-
-model UserChat {
-  id     String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId String  @db.ObjectId
-  user   User    @relation(fields: [userId], references: [id])
-  Chat   Chat?   @relation(fields: [chatId], references: [id])
-  chatId String? @db.ObjectId
-}
-
-model Message {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  text      String
-  userId    String   @db.ObjectId
-  user      User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Chat      Chat?    @relation(fields: [chatId], references: [id])
-  chatId    String?  @db.ObjectId
-}
-
 model Cart {
   id        String     @id @default(auto()) @map("_id") @db.ObjectId
   userId    String     @unique @db.ObjectId
@@ -119,4 +84,35 @@ model CartItem {
   quantity  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Chat {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  user      UserChat[]
+  messages  Message[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  User      User?      @relation(fields: [userId], references: [id])
+  userId    String?    @db.ObjectId
+}
+
+
+
+model UserChat {
+  id     String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId String  @db.ObjectId
+  user   User    @relation(fields: [userId], references: [id])
+  Chat   Chat?   @relation(fields: [chatId], references: [id])
+  chatId String? @db.ObjectId
+}
+
+model Message {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  text      String
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Chat      Chat?    @relation(fields: [chatId], references: [id])
+  chatId    String?  @db.ObjectId
 }

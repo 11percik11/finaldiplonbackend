@@ -466,36 +466,6 @@ const UserController = {
         },
       });
 
-      // const transporter = nodemailer.createTransport({
-      //   service: "gmail",
-      //   auth: {
-      //     user: "rebi7dan@gmail.com", // Ваш Gmail
-      //     pass: "gecu ctbo llad ozch", // Пароль приложения (не основной пароль!)
-      //   },
-      // });
-
-      // // Настройки письма
-      // const mailOptions = {
-      //   from: `"Название Вашего СервисаВВВВВВ" <rebi7dan@gmail.com>`,
-      //   to: email, // Кому
-      //   subject: 'Добро пожаловать в Мой Сервис',
-      //   html: `
-      //         <h1>Добро пожаловать, ${name}!</h1>
-      //         <p>Спасибо за регистрацию в нашем сервисе.</p>
-      //         <p>Ваш email: <strong>http://localhost:5000/active/${activationLink}</strong></p>
-      //         `,
-      //   text: `Добро пожаловать, ${name}!\n\nСпасибо за регистрацию.\n\nВаш email: ${email}`,
-      // };
-
-      // // Отправка
-      // transporter.sendMail(mailOptions, (error, info) => {
-      //   if (error) {
-      //     console.error("Error:", error);
-      //   } else {
-      //     console.log("Email sent:", info.response);
-      //   }
-      // });
-
       res.json(user);
     } catch (error) {
       console.error("Error in register:", error);

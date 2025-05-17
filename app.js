@@ -27,9 +27,9 @@ const app = express();
 // ));
 
 const allowedOrigins = [
-  'http://localhost',
-  'http://localhost:80',
-  'http://localhost:3000',
+  'http://footzy.online',
+  'http://footzy.online:80',
+  'http://footzy.online:3000',
   process.env.BASE_URL_FRONT
 ].filter(Boolean);
 
