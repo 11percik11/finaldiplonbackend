@@ -18,10 +18,7 @@ const allowedOrigins = [
   `http://${process.env.BASE_URL}`,
   `http://${process.env.BASE_URL}:80`,
   `http://${process.env.BASE_URL}:3000`,
-  // `http://localhost:3000`,
-  // `http://localhost`,
-  // `http://localhost:80`,
-  // 'http://localhost:5173',
+  // `http://${process.env.BASE_URL}:443`,
   process.env.BASE_URL_FRONT
 ].filter(Boolean);
 
