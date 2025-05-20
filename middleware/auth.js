@@ -11,7 +11,7 @@ const authenticateToken = (req, res, next) => {
   }
 
   try {
-
+    console.log("accen", token);
     // Проверяем токен
     jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
       if (err) {
